@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: '2'
+    deployment.kubernetes.io/revision: '3'
   creationTimestamp: '2022-11-02T13:42:50Z'
-  generation: 2
+  generation: 3
   labels:
     app: hedgeDoc
     io.kompose.service: app
     template: hedgeDoc
   name: app
   namespace: csc-hedgedoc
-  resourceVersion: '1692947641'
+  resourceVersion: '1694240075'
   selfLink: /apis/apps/v1/namespaces/csc-hedgedoc/deployments/app
   uid: 3e210f32-5ab4-11ed-a890-fa163e081ad5
 spec:
@@ -58,6 +58,8 @@ spec:
               value: '5432'
             - name: CMD_DB_DIALECT
               value: postgres
+            - name: CMD_ALLOW_FREEURL
+              value: 'true'
           image: 'quay.io/hedgedoc/hedgedoc:1.9.4'
           imagePullPolicy: IfNotPresent
           name: app
@@ -82,19 +84,19 @@ spec:
 status:
   availableReplicas: 1
   conditions:
-    - lastTransitionTime: '2022-11-02T13:58:17Z'
-      lastUpdateTime: '2022-11-02T13:58:17Z'
+    - lastTransitionTime: '2022-11-03T12:21:25Z'
+      lastUpdateTime: '2022-11-03T12:21:25Z'
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: 'True'
       type: Available
     - lastTransitionTime: '2022-11-02T13:42:50Z'
-      lastUpdateTime: '2022-11-02T13:58:17Z'
-      message: ReplicaSet "app-c8466fcb4" has successfully progressed.
+      lastUpdateTime: '2022-11-03T12:21:25Z'
+      message: ReplicaSet "app-66678d56f7" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: 'True'
       type: Progressing
-  observedGeneration: 2
+  observedGeneration: 3
   readyReplicas: 1
   replicas: 1
   updatedReplicas: 1
