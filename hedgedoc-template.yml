@@ -69,7 +69,7 @@ objects:
           - name: CMD_URL_ADDPORT
             value: "false"
           - name: CMD_PROTOCOL_USESSL
-            value: https
+            value: "true"
           - name: CMD_DB_USERNAME
             valueFrom:
               secretKeyRef:
@@ -91,6 +91,10 @@ objects:
             value: "5432"
           - name: CMD_DB_DIALECT
             value: postgres
+          - name: CMD_ALLOW_FREEURL
+            value: 'true'
+          - name: CMD_REQUIRE_FREEURL_AUTHENTICATION
+            value: 'true'
           image: ${HEDGEDOC_IMAGE}
           imagePullPolicy: IfNotPresent
           name: app
