@@ -91,7 +91,9 @@ objects:
             value: "5432"
           - name: CMD_DB_DIALECT
             value: postgres
-          - name:  CMD_ALLOW_FREEURL
+          - name: CMD_ALLOW_FREEURL
+            value: 'true'
+          - name: CMD_REQUIRE_FREEURL_AUTHENTICATION
             value: 'true'
           image: ${HEDGEDOC_IMAGE}
           imagePullPolicy: IfNotPresent
